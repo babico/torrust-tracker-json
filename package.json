@@ -1,0 +1,15 @@
+{
+  "name": "torrust-tracker-json",
+  "version": "1.0.0",
+  "description": "This is a json data extractor made with node.js for Torrust Tracker by Torrust.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["tracker", "torrust", "api", "json"],
+  "author": "Babico",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
