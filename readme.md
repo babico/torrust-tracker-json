@@ -20,4 +20,4 @@ After all these if you want, you can open it to the internet with a web server (
 Setting crontab for every 5 minute.
 
 1. Enter crontab editing `crontab -e`
-2. Add this `*/5 * * * * /usr/bin/node /<use all location>/torrust-tracker-json/index.js` line with your location
+2. Add this `*/5 * * * * sudo /usr/bin/node /<use all location>/torrust-tracker-json/index.js` line with your location
