@@ -27,8 +27,6 @@ axios
 			udp6_connections_handled:0,udp6_announces_handled:0,udp6_scrapes_handled:0
 		};
         checkFile(a);
-
-        //checkFile(x);
     });
 function checkFile(obj_) {
         if (fs.existsSync(json_loc)) {
