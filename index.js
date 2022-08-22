@@ -13,29 +13,8 @@ axios
         let json = JSON.parse( // edit your starting date as epoch ms
             '{"date":' + Date.now().toString() + ',"uptime":' + (Date.now() - 1659069369474).toString() + ',' + json_text.slice(1)
         );
-
-        if (fs.existsSync(json_loc)) {
-            fs.readFile(json_loc, 'utf8', function(err, data) {
-                if (err)
-                    console.log(err);
-
-                if (data.length == 0) {
-                    fs.writeFile(json_loc, '{"data": []}', 'utf8', function(err, data) {
-                        if (err)
-                            console.log(err);
-                    })
-                    toJson(json);
-                } else {
-                    toJson(json);
-                }
-            });
-        } else {
-            fs.writeFile(json_loc, '{"data": []}', 'utf8', function(err, data) {
-                if (err)
-                    console.log(err);
-            })
-            toJson(json);
-        }
+    
+        checkFile(json);
     })
     .catch((error) => {
         console.log(error);
@@ -59,6 +38,9 @@ axios
             "udp6_announces_handled":0,
             "udp6_scrapes_handled":0}`
         );
+        checkFile(json);
+    });
+function checkFile(obj_) {
         if (fs.existsSync(json_loc)) {
             fs.readFile(json_loc, 'utf8', function(err, data) {
                 if (err)
@@ -69,9 +51,9 @@ axios
                         if (err)
                             console.log(err);
                     })
-                    toJson(json);
+                    toJson(obj_);
                 } else {
-                    toJson(json);
+                    toJson(obj_);
                 }
             });
         } else {
@@ -79,10 +61,9 @@ axios
                 if (err)
                     console.log(err);
             })
-            toJson(json);
+            toJson(obj_);
         }
-    });
-
+}
 
 function toJson(obj_) {
     fs.readFile(json_loc, 'utf8', function(err, data) {
