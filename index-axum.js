@@ -14,15 +14,19 @@ axios
     })
     .catch((error) => {
 		console.log(error);
-		a = {
-			date: Date.now().toString(),uptime:0,
-			torrents:0,seeders:0,completed:0,leechers:0,
-			tcp4_connections_handled:0,tcp4_announces_handled:0,tcp4_scrapes_handled:0,
-			tcp6_connections_handled:0,tcp6_announces_handled:0,tcp6_scrapes_handled:0,
-			udp4_connections_handled:0,udp4_announces_handled:0,udp4_scrapes_handled:0,
-			udp6_connections_handled:0,udp6_announces_handled:0,udp6_scrapes_handled:0
+		blank = {
+			started: 0,
+            timestamp_run_save: 0,timestamp_run_timeout: 0,timestamp_run_console: 0,timestamp_run_keys_timeout: 0,
+            torrents: 0,torrents_updates: 0,torrents_shadow: 0,
+            seeds: 0,peers: 0,completed: 0,
+            whitelist_enabled: false,whitelist: 0,blacklist_enabled: false,blacklist: 0,
+            keys_enabled: false,keys: 0,
+            tcp4_connections_handled: 0,tcp4_api_handled: 0,tcp4_announces_handled: 0,tcp4_scrapes_handled: 0,
+            tcp6_connections_handled: 0,tcp6_api_handled: 0,tcp6_announces_handled: 0,tcp6_scrapes_handled: 0,
+            udp4_connections_handled: 0,udp4_announces_handled: 0,udp4_scrapes_handled: 0,
+            udp6_connections_handled: 0,udp6_announces_handled: 0,udp6_scrapes_handled: 0
 		};
-        checkFile(a);
+        checkFile(blank);
     });
 function checkFile(obj_) {
         if (fs.existsSync(json_loc)) {
