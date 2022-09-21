@@ -2,17 +2,13 @@ const axios = require("axios"),
     fs = require('fs');
 
 // Edit with your link and location of json file
-var link = 'http://xxx.xxx.xxx.xxx:1212/api/stats?token=MyAccessToken',
-    json_loc = './tracker.json';
+var link = 'http://158.101.161.60:1313/api/stats?token=verysecrettoken3131',
+    json_loc = './tracker-axum.json';
 	
 axios
     .get(link)
     .then((response) => {
-        let json_text = JSON.stringify(response.data);
-
-        let json = JSON.parse( 												// edit your starting date as epoch ms
-            '{"date":' + Date.now().toString() + ',"uptime":' + (Date.now() - 1663464809623).toString() + ',' + json_text.slice(1)
-        );
+        let json = JSON.parse(JSON.stringify(response.data));
     
         checkFile(json);
     })
