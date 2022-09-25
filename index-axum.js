@@ -19,7 +19,7 @@ axios
     .catch((error) => {
 		console.log(error);
 		blank = {
-			started: 0,
+            date: Date.now(),started: 0,
             timestamp_run_save: 0,timestamp_run_timeout: 0,timestamp_run_console: 0,timestamp_run_keys_timeout: 0,
             torrents: 0,torrents_updates: 0,torrents_shadow: 0,
             seeds: 0,peers: 0,completed: 0,
