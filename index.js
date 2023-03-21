@@ -10,13 +10,9 @@ axios
     .then((response) => {
         let json_text = JSON.stringify(response.data);
 
-<<<<<<< HEAD
-        let json = JSON.parse( 												// edit your starting date as epoch ms
-            '{"date":' + Date.now().toString() + ',"uptime":' + (Date.now() - 1663464809623).toString() + ',' + json_text.slice(1)
-=======
         let json = JSON.parse( // edit your starting date as epoch ms
             '{"date":' + Date.now().toString() + ',"uptime":' + (Date.now() - 1661190707000).toString() + ',' + json_text.slice(1)
->>>>>>> 522b63d99a60b85510ccbb89c9e7d05e6f77f435
+
         );
 
         checkFile(json);
